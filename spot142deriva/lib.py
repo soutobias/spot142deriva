@@ -38,7 +38,7 @@ def calculate_distance(df):
     df['distance'] = df.apply(lambda row: haversine(row, deployment_loc[1], deployment_loc[0]), axis=1)
 
     df['veloc'] = df['distance'].diff()/(df['date_time'].diff().dt.total_seconds()/3600)
-
+    
     return df
 
 def plot_map(df):

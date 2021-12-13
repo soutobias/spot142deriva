@@ -15,4 +15,5 @@ else:
     st.write(f"#### {(df['date_time'].min())} até {(df['date_time'].max())}")
     st.write(f"#### Última posição: LAT {(df['latitude'].iloc[-1])}, LON {(df['longitude'].iloc[-1])}")
     df = lib.calculate_distance(df)
+    st.write(f"#### Velocidade de deriva: {(round(df['veloc'].iloc[-1], 3))} nós")
     lib.plot_map(df)
